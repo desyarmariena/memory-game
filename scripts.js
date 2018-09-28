@@ -21,7 +21,7 @@ function balikKartu(){
         hasFlippedCard = false; // 2 kartu sudah dibuka, harus balik kartu lagi
         console.log('kartu kedua');        
     }
-            
+    checkGameOver();     
 }
 
 function checkKartu(){
@@ -47,6 +47,17 @@ function tutupKartu(){
     }, 500);
 }
 
+function checkGameOver(){
+    let semuaKartu = document.querySelectorAll('.memory-card');
+    let kartuTerbuka = document.querySelectorAll('.flip');
+
+    console.log(semuaKartu.length, kartuTerbuka.length);
+    if(semuaKartu.length === kartuTerbuka.length){
+        console.log('Game selesai');
+    }
+}
+
+// random posisi kartu
 (function shuffle() {
   cards.forEach(card => {
     let ramdomPos = Math.floor(Math.random() * 12);
